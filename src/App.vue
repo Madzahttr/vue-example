@@ -1,30 +1,40 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div class="wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader">
+            <img src="https://via.placeholder.com/200x200/454545/EAEAEA/" alt="AdminLTELogo" height="200" width="200" style="margin: calc(50vh - 100px) calc(50vw - 100px)">
+        </div>
+
+        <Navbar />
+
+        <RightSidebar />
+
+        <router-view/>
+
+        <LeftSidebar />
+
+        <Footer />
+    </div>
 </template>
 
+<script>
+import Navbar from '@/components/Navbar'
+import RightSidebar from '@/components/RightSidebar'
+import LeftSidebar from '@/components/LeftSidebar'
+import Footer from '@/components/Footer'
+
+export default {
+	components: {
+		Navbar,
+        RightSidebar,
+        LeftSidebar,
+        Footer
+	},
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback");
+@import url("https://pro.fontawesome.com/releases/v5.15.3/css/all.css");
 </style>
